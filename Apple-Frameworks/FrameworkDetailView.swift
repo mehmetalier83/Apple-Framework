@@ -10,7 +10,6 @@ import SwiftUI
 struct FrameworkDetailView: View {
     @Binding var isshowDetailShow : Bool
     var framework : Framework
-    
     var body: some View {
         
         
@@ -36,7 +35,9 @@ struct FrameworkDetailView: View {
             
             Spacer()
             Button {
-                
+                if let url = URL(string: framework.urlString) {
+                       UIApplication.shared.open(url)
+                   }
             } label: {
              AFButton(title: "Learn More")
             }
